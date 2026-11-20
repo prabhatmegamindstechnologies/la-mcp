@@ -65,17 +65,19 @@ The MCP URL is `<MCP_PUBLIC_URL>/mcp`, for example `https://la-mcp.vercel.app/mc
   1. Run `npx @modelcontextprotocol/inspector`.
   2. Choose **Add Servers**, then **Streamable HTTP**, and enter the MCP URL.
   3. Connect. The sign-in page opens in the browser.
-- **ChatGPT Business:**
-  1. A workspace admin enables custom connectors (developer mode) in the workspace settings.
-  2. Go to **Settings → Connectors → Create**, enter the MCP URL, and set Authentication to **OAuth**.
-  3. ChatGPT registers itself and opens the sign-in page.
-
-  These menu names are from memory; check OpenAI's current help pages.
-- **Copilot Studio:**
+- **ChatGPT Business, Enterprise or Edu** (on Business, only admins and owners can create these):
+  1. Go to **chatgpt.com/plugins** and click **+**, then **Add custom MCP server**.
+  2. Enter the MCP URL, set Authentication to **OAuth**, and click **Create as a plugin**.
+  3. Install the plugin, then type `@` in a chat to use it.
+- **Copilot Studio** (the free trial is enough for testing):
   1. Open the agent and go to **Tools → Add a tool → New tool → Model Context Protocol**.
-  2. Enter the server URL, choose **OAuth 2.0** with **dynamic discovery**, then create a connection and sign in.
+  2. Enter the server URL, choose **OAuth 2.0 → Dynamic discovery**, then create a connection and sign in.
+  3. Generative orchestration must be on for the agent.
+- **Claude:**
+  1. Go to **Settings → Connectors → Add custom connector** and enter the MCP URL.
+  2. Sign in. This was tested on 2026-11-20.
 
-  These menu names are from memory; check Microsoft's current docs.
+See [docs/connector-support.md](docs/connector-support.md) for plans, limits and sources (checked 2026-11-20).
 
 ## Run locally
 

@@ -15,6 +15,8 @@ The "existing API" for la-mcp is the **LiveAccess website CMS** (`D:\LiveAccess-
 - It keeps the CMS `la_refresh` cookie and CSRF token sealed inside the refresh token, and calls `/auth/refresh` and `/auth/logout` with them. No CMS change was needed.
 - Nothing is stored (Vercel). Everything issued is sealed with `MCP_TOKEN_SECRET`; see `src/seal.ts`.
 - Contact messages go to AI tools without name, email or company, with contact details in the text masked (decision 3b). The text search was removed.
+- Hosting: Vercel `sin1`, at https://la-mcp-three.vercel.app. The code is in GitHub at prabhatmegamindstechnologies/la-mcp, under the Vercel Hobby account prabhat-5653. Pushing `main` deploys. Use the "Other" preset, not Express.
+- Don't set `"types": ["node"]` in tsconfig. Vercel's TS 7 check can't resolve it (TS2688); use `/// <reference types="node" />` in `api/index.ts` and `server.ts` instead.
 - Hosting: Vercel `sin1`. `api/index.ts` wraps the Express app; `vercel.json` rewrites everything to it.
 
 - Sign-in page: never use `Referrer-Policy: no-referrer`. Browsers then send `Origin: null` on the form POST and the origin check refuses the sign-in (bug found 2026-11-20, fixed with `same-origin`).
