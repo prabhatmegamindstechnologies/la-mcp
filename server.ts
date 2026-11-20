@@ -1,3 +1,4 @@
+/// <reference types="node" />
 import express, { type NextFunction, type Request, type Response } from "express";
 import { rateLimit } from "express-rate-limit";
 import { existsSync } from "node:fs";

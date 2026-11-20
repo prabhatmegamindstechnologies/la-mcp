@@ -1,3 +1,5 @@
+/// <reference types="node" />
+// Node types are referenced here, not via tsconfig "types": Vercel's TS 7 check can't resolve that entry (TS2688).
 // Vercel Function: every path is rewritten here (vercel.json) and handled by the same Express app as the local server.
 // Built on the first request, so a missing setting shows in the Function log instead of failing the deployment.
 import type { IncomingMessage, ServerResponse } from "node:http";
